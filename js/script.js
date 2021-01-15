@@ -20,7 +20,7 @@ let questionsBank = [
   { // Condition Done
     question: "Select your birthdate:",
     answer: {
-      type: "date",
+      type: "input date",
       id: "dob",
       answers: 0
     }
@@ -51,46 +51,66 @@ $(document).ready(function() {
     $("#start-btn").hide();
     $("form#quiz").show();
 
+    if(questionCount === 4) {}
+
     let currentQuestionSet = questionsBank[questionCount];
     console.log(currentQuestionSet)
 
     function renderNextQuestion(question, id, type, answers) {
+      console.log({
+        question, id, type, answers
+      })
       if(type === "radio") {
-        $("placeholder-label").remove();
-        $("placeHolder").remove();
-        let radioNum = 1;
+        $("#placeholder-label").remove();
+        $("#dropdown-placeholder").remove();
+        $("#next-btn").hide();
+        $("#finish-btn").show();
 
-        for(let i = 0; i < answer.length; i++) {
-          let createLabel = `<label for="${id + radioNum}"> ${question} </label>`;
+        let radioNum = 1;
+        for(let i = 0; i < answers.length; i++) {
+          let createLabel = `<label for="${id + radioNum}"> ${answers[i]} </label>`;
           let createInput = `<input type="radio" id="${id + radioNum}" name="radio">`;
-          $("#quiz").append(createLabel);
-          $("#quiz").append(createLabel);
+          $("#quiz").prepend(createLabel);
+          $("#quiz").prepend(createInput);
+          $("#quiz").prepend("<br>");
         }
+        $("#quiz").prepend(`<p>${questionCount + 1}. ${question}</p>`)
 
       } else {
-        $("#placeholder-label").text(`${questionCount + 1}.${question}`);
+        $("#placeholder-label").text(`${questionCount + 1}. ${question}`);
         $("#placeholder-label").attr("for", id);
 
         if(type.includes("input")) {
-          $("#placeHolder").attr("input", type.split(" ")[1]);
-          $("#placeHolder").attr("input", type.split(" ")[1]);
-        } else {
-          $("placeHolder").remove();
-          $("#quiz").append(`<select name="${id} id="${id}> </select>"`)
+          $("#placeHolder").attr("name", id);
+          $("#placeHolder").attr("type", type.split(" ")[1]);
+        } else{
+          $("#placeHolder").remove();
+          $("#dropdown-placeholder").prepend(`<select name="${id}" id="${id}"> </select>`)
           
-          for(let i = 0; i < answer.length; i++) {
-            let createOption = `<option value="${answer[i]}">${answer[i]}</option>`;
+          for(let i = 0; i < answers.length; i++) {
+            let createOption = `<option value="${answers[i]}">${answers[i]}</option>`;
             $("#color").append(createOption);
           }
         }
       }
-
-      
-
     }
-    // console.log(`${questionCount} === ${questionsBank.length}`)
-    //$("#placeholder-label").text(currentQuestionSet.question);
-    //$("#placeholder-label").attr("for", currentQuestionSet.answer.id);
-    // questionCount++; Only use when they click NEXT button.
+
+    renderNextQuestion(
+      currentQuestionSet.question, 
+      currentQuestionSet.answer.id, 
+      currentQuestionSet.answer.type, 
+      currentQuestionSet.answer.answers
+    );
+    $("#next-btn").click(function() {
+      questionCount++;
+      currentQuestionSet = questionsBank[questionCount]
+      renderNextQuestion(
+        currentQuestionSet.question, 
+        currentQuestionSet.answer.id, 
+        currentQuestionSet.answer.type, 
+        currentQuestionSet.answer.answers
+      );
+    });
+
   });
 });
