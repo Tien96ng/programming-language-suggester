@@ -13,3 +13,16 @@ h4 {
   margin-right: auto;
   margin-top: 20px;
 }
+
+label {
+  padding-left: 10px;
+} 
+
+body {
+  text-align: center;
+}
+
+#next-btn {
+  margin-top: 20px;
+}
+

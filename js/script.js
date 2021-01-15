@@ -73,6 +73,7 @@ $(document).ready(function() {
           $("#quiz").prepend(createLabel);
           $("#quiz").prepend(createInput);
           $("#quiz").prepend("<br>");
+          radioNum++;
         }
         $("#quiz").prepend(`<p>${questionCount + 1}. ${question}</p>`)
 
