@@ -12,12 +12,19 @@
   <body>
     <div class="container">
       <h4> 
-        Welcome to the Programming Language Suggester Quiz. 
-        Finish the quiz to determine which programming language you should learn! 
+        <strong>
+          <em>
+            Welcome to the Programming Language Suggester Quiz. 
+            Finish the quiz to determine which programming language you should learn! 
+          </em>
+        </strong>
       </h4>
+
       <form id="quiz">
-        <label for="placeHolder"></label>
+        <label for="placeHolder" id="placeholder-label"></label>
+        <br>
         <input type="text" id="placeHolder" name="placeHolder">
+        <br>
         <button type="button" value="Next" class="btn btn-success">Next</button>
         <button type="submit" class="btn btn-danger" id="finish-btn">Finish Quiz</button>
       </form>
