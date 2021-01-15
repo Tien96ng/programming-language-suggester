@@ -10,6 +10,50 @@
     <title>Programming Language Suggester</title>
   </head>
   <body>
+    <div class="container">
+      <h1>Programming Language Suggester</h1>
+      
+      <form id="quiz">
+        <label for="fav-color" class="question">1. What is your favorite color:</label>
+        <input type="color" id="fav-color" class="fav-color">
+        <hr>
+
+        <label for="math-problem" class="question">2. Solve the following: (5 + 4) x 9</label>
+        <input type="number" id="math-problem" class="math-problem">
+        <hr>
+
+        <label for="pbj" class="question">3. Select your preference on an afternoon sandwich:</label>
+        <select name="pbj" id="pbj">
+          <option selected value="default"></option>
+          <option value="peanut-butter">Peanut Butter</option>
+          <option value="jelly">Jelly</option>
+          <option value="peanut-jelly">Peanut Butter and Jelly</option>
+        </select>
+        <hr>
+        
+        <label for="type-programmer" class="question">4. What Type of Programmer are you?</label>
+        <select name="type-programmer" id="type-programmer">
+          <option selected value="default"></option>
+          <option value="stackoverflow">Stackoverflow Forum Follower</option>
+          <option value="twitter">Twitter Tech Tweeter</option>
+          <option value="zen">Zen Coder</option>
+          <option value="senior">Senior Dev</option>
+        </select>
+        <hr>
+
+        <p>5.Check all the following that apply to you below:</p>
+        <input type="checkbox" name="walk" value="Walk" id="walk">
+        <label for="walk">I like to Walk</label> <br>
+        <input type="checkbox" name="run" value="Run" id="run">
+        <label for="run">I like to Run</label> <br>
+        <input type="checkbox" name="sleep" value="Sleep" id="sleep">
+        <label for="sleep">I like to Sleep</label ><br>
+        <hr>
+
+        <button type="submit" class="btn btn-success" value="Submit">Submit</button>
+      </form>
+    </div>
+
     
   </body>
 </html>
