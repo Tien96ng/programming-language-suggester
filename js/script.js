@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
   $("form#quiz").submit(function(event) {
     event.preventDefault();
@@ -16,5 +14,15 @@ $(document).ready(function() {
     console.log({
       color, number, pbj, programmer, walk, run, sleep
     });
+
+    if(sleep) {
+      console.log("You're a Python Programmer.")
+    } else {
+      if(walk) {
+        console.log("You're a JavaScript Programmer")
+      } else {
+        console.log("You're a Java Programmer")
+      }
+    }
   })
 });
