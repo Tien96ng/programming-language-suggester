@@ -1,18 +1,3 @@
-h1 {
-  padding-bottom: 30px;
+#finish-btn {
+  display: none;
 }
-
-form#quiz {
-  border: 2px black dashed;
-  padding: 20px;
-}
-
-label.question {
-  margin-right: 10px;
-}
-
-input[type=checkbox]:checked + label {
-  color: #f00;
-  font-style: italic;
-  text-decoration: line-through;
-} 
