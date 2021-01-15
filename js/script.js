@@ -1,3 +1,23 @@
+let questionsBank = {
+  questionOne: {
+    question: "What color do you like the most out of the choice's below?",
+    answer: {
+      type: "dropdown",
+      answers: ["Blue", "Orange", "Purple", "Yellow", "Red"] // Python, Java, C#, JS, Ruby
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function() {
   $("form#quiz").submit(function(event) {
     event.preventDefault();
