@@ -47,9 +47,9 @@ let questionsBank = [
 $(document).ready(function() {
 
   $("#start-btn").click(function() {
-    $("h4").hide();
-    $("#start-btn").hide();
-    $("form#quiz").show();
+    $("h4").fadeOut("slow");
+    $("#start-btn").fadeOut("slow");
+    $("form#quiz").slideDown("slow");
 
     let currentQuestionSet = questionsBank[questionCount];
     $("#questionsNum").text(`${questionCount + 1} / ${questionsBank.length} questions`);
@@ -62,7 +62,11 @@ $(document).ready(function() {
         $("#placeholder-label").remove();
         $("#dropdown-placeholder").remove();
         $("#next-btn").hide();
-        $("#finish-btn").show();
+        $("#finish-btn").animate({
+          opacity: 100,
+          left: "+=50",
+          height: "toggle"
+        }, 1000);
 
         let radioNum = 1;
         for(let i = 0; i < answers.length; i++) {
