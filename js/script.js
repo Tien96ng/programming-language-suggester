@@ -55,9 +55,6 @@ $(document).ready(function() {
     $("#questionsNum").text(`${questionCount + 1} / ${questionsBank.length} questions`);
 
     function renderNextQuestion(question, id, type, answers) {
-      console.log({
-        question, id, type, answers
-      })
       if(type === "radio") {
         $("#placeholder-label").remove();
         $("#dropdown-placeholder").remove();
@@ -104,6 +101,7 @@ $(document).ready(function() {
       currentQuestionSet.answer.type, 
       currentQuestionSet.answer.answers
     );
+
     $("#next-btn").click(function() {
       questionCount++;
       currentQuestionSet = questionsBank[questionCount]
@@ -114,6 +112,13 @@ $(document).ready(function() {
         currentQuestionSet.answer.answers
       );
       $("#questionsNum").text(`${questionCount + 1} / ${questionsBank.length} questions`);
+    });
+
+    $("#finish-btn").click(function(event) {
+      
+      event.preventDefault();
+      $("div.container").hide();
+      $("div#result").show();
     });
   });
 });
