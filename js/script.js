@@ -51,10 +51,8 @@ $(document).ready(function() {
     $("#start-btn").hide();
     $("form#quiz").show();
 
-    if(questionCount === 4) {}
-
     let currentQuestionSet = questionsBank[questionCount];
-    console.log(currentQuestionSet)
+    $("#questionsNum").text(`${questionCount + 1} / ${questionsBank.length} questions`);
 
     function renderNextQuestion(question, id, type, answers) {
       console.log({
@@ -111,7 +109,7 @@ $(document).ready(function() {
         currentQuestionSet.answer.type, 
         currentQuestionSet.answer.answers
       );
+      $("#questionsNum").text(`${questionCount + 1} / ${questionsBank.length} questions`);
     });
-
   });
 });
