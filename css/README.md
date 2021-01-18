@@ -24,6 +24,7 @@ _If neither option is appeal, please view the live project [here](https://tien96
 * _Lacking media breaks for majority of the page._
 * _No required input validation to avoid "Null" or "NaN"._
 * _Doesn't read the last form value(s) for radio input._
+* _If you press the enter key, it'll end the quiz unofficially as submission._
 
 
 ## License
