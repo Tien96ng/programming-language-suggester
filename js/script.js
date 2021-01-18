@@ -79,6 +79,7 @@ $(document).ready(function() {
       } else {
         $("#placeholder-label").text(`${questionCount + 1}. ${question}`);
         $("#placeholder-label").attr("for", id);
+        $("#placeHolder").attr("for", id);
 
         if(type.includes("input")) {
           $("#placeHolder").attr("name", id);
@@ -103,6 +104,10 @@ $(document).ready(function() {
     );
 
     $("#next-btn").click(function() {
+      let currentVal = $("#placeHolder").val();
+      if(questionCount === 3) {
+        currentVal = $("#color :selected").text();
+      }
       questionCount++;
       currentQuestionSet = questionsBank[questionCount]
       renderNextQuestion(
@@ -111,14 +116,18 @@ $(document).ready(function() {
         currentQuestionSet.answer.type, 
         currentQuestionSet.answer.answers
       );
+      
+      userAnswers.push(currentVal);
       $("#questionsNum").text(`${questionCount + 1} / ${questionsBank.length} questions`);
+      $("form#quiz")[0].reset();
     });
 
     $("#finish-btn").click(function(event) {
-      
+      let result = "";
       event.preventDefault();
       $("div.container").hide();
       $("div#result").show();
+      console.log(userAnswers);
     });
   });
 });
