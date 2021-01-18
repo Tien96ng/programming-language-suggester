@@ -68,5 +68,24 @@ form {
   color: red;
 }
 
+#program-list {
+  margin:  15px;
+  border: dashed 2px black;
+  width: 150px;
+  float: left;
+}
+
+#possible-answer-list {
+  margin:  15px;
+  border: dashed 2px black;
+  width: 150px;
+  float: right;
+}
+
+#note {
+  font-style: italic;
+  text-decoration: underline;
+}
+
 
 

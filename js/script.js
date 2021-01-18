@@ -1,7 +1,7 @@
 let questionCount = 0;
 let userAnswers = [];
 let questionsBank = [
-  { // Condition Done
+  {
     question: "(10 x 7 / 5) + 3)",
     answer: {
       type: "input number",
@@ -9,7 +9,7 @@ let questionsBank = [
       answers: 17
     }
   },
-  { // Condition Done
+  {
     question: "Enter in your first name:",
     answer: {
       type: "input text",
@@ -17,7 +17,7 @@ let questionsBank = [
       answers: ""
     }
   },
-  { // Condition Done
+  {
     question: "Select your birthdate:",
     answer: {
       type: "input date",
@@ -30,10 +30,10 @@ let questionsBank = [
     answer: {
       type: "dropdown",
       id: "color",
-      answers: ["Blue", "Orange", "Purple", "Yellow", "Red"] // Python, Java, C#, JS, Ruby
+      answers: ["Blue", "Orange", "Purple", "Yellow", "Red"]
     }
   },
-  { // Condition Done
+  {
     question: "Select the applicable answer to you:",
     answer: {
       type: "radio",
@@ -135,28 +135,34 @@ $(document).ready(function() {
         case "Blue":
           $("#program-placeholder").text("Python");
           $("#program-placeholder").attr("class", "python");
+          $("#first-ans").text("Python")
           break;
         case "Orange":
           $("#program-placeholder").text("Java");
           $("#program-placeholder").attr("class", "java");
+          $("#first-ans").text("Java")
           break;
         case "Purple":
           $("#program-placeholder").text("C#");
           $("#program-placeholder").attr("class", "cSharp");
+          $("#first-ans").text("C#")
           break;
         case "Yellow":
           $("#program-placeholder").text("JavaScript");
           $("#program-placeholder").attr("class", "javaScript");
+          $("#first-ans").text("JavaScript")
           break;
         default:
           $("#program-placeholder").text("Scala");
           $("#program-placeholder").attr("class", "scala");
+          $("#first-ans").text("Scala")
           break;
       }
 
       if(parseInt(userAnswers[0]) === 17) {
-        $("#program-placeholder").text("Java");
-        $("#program-placeholder").attr("class", "java");
+        $("#note-placeholder").text("You're good at Math!");
+      } else {
+        $("#note-placeholder").text("Work on your math!")
       }
 
       let date = new Date();
