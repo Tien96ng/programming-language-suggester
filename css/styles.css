@@ -68,18 +68,19 @@ form {
   color: red;
 }
 
-#program-list {
+#program-list, #possible-answer-list {
   margin:  15px;
   border: dashed 2px black;
   width: 150px;
-  float: left;
+  padding: 10px;
 }
 
 #possible-answer-list {
-  margin:  15px;
-  border: dashed 2px black;
-  width: 150px;
   float: right;
+}
+
+#program-list {
+  float: left;
 }
 
 #note {
