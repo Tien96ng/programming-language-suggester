@@ -128,6 +128,39 @@ $(document).ready(function() {
       $("div.container").hide();
       $("div#result").show();
       console.log(userAnswers);
+
+      $("#name-placeholder").text(userAnswers[1].charAt(0).toUpperCase() + userAnswers[1].slice(1).toLowerCase());
+
+      switch(userAnswers[3]) {
+        case "Blue":
+          $("#program-placeholder").text("Python");
+          $("#program-placeholder").attr("class", "python");
+          break;
+        case "Orange":
+          $("#program-placeholder").text("Java");
+          $("#program-placeholder").attr("class", "java");
+          break;
+        case "Purple":
+          $("#program-placeholder").text("C#");
+          $("#program-placeholder").attr("class", "cSharp");
+          break;
+        case "Yellow":
+          $("#program-placeholder").text("JavaScript");
+          $("#program-placeholder").attr("class", "javaScript");
+          break;
+        default:
+          $("#program-placeholder").text("Scala");
+          $("#program-placeholder").attr("class", "scala");
+          break;
+      }
+
+      if(parseInt(userAnswers[0]) === 17) {
+        $("#program-placeholder").text("Java");
+        $("#program-placeholder").attr("class", "java");
+      }
+
+      let date = new Date();
+      $("#age-placeHolder").text(date.getFullYear() -  parseInt(userAnswers[2].split("-")[0]))
     });
   });
 });

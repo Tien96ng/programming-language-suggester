@@ -48,4 +48,25 @@ form {
   background-color: white;
 }
 
+.java {
+  color: orange;
+}
+
+.python {
+  color: blue;
+}
+
+.cSharp {
+  color: purple;
+}
+
+.javaScript {
+  color: yellow;
+}
+
+.scala {
+  color: red;
+}
+
+
 
