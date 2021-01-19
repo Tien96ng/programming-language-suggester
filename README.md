@@ -12,7 +12,7 @@
 
 ## Description
 _This project uses html, CSS, Bootstrap 4.5, and jQuery 3.1 in order to create a quiz that shows the user which programming language they should learn.
-There are a totla of 5 questions. The only question that truly matters is the color to the programming language. For example, blue would be for Python. The other answers from the 5 questions are used to display personal information to the screen, such as greet the user by their first name._
+There are a total of 5 questions. The only question that truly matters is the color to the programming language. For example, blue would be for Python. The other answers from the 5 questions are used to display personal information to the screen, such as greet the user by their first name._
 
 ## Setup/Installation Requirements
 * _(No installations required.)_
